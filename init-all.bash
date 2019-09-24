@@ -2,7 +2,7 @@
 
 
 sudo pacman -Sy
-sudo pacman-mirrors --country all
+sudo pacman-mirrors --country Brazil
 sudo pacman -Syy
 
 archInstall() {
