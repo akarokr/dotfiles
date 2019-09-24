@@ -3,7 +3,7 @@
 tools=(git zsh curl xclip spotify-stable google-chrome-stable zip unzip docker)
 
 for i in ${tools[@]}; do
-  archInstall ${i}
+  yay -Syyu --needed --noconfirm ${i}
 done
 
 source utils.bash
