@@ -30,6 +30,7 @@ TRAPWINCH() {
 ########## Custom settings section ########## 
 
 # Export section
+export EDITOR=vim
 export WORKON_HOME=$HOME/.virtualenvs
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 
@@ -42,6 +43,3 @@ alias zshconfig="vim ~/.zshrc"
 alias zshsource="source ~/.zshrc"
 alias docker-kill-containers='docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)'
 alias docker-rm-images='docker rmi $(docker images -q) --force'
-
-
-

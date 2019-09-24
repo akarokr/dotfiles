@@ -20,3 +20,7 @@ cp -u ../zsh/zshrc $HOME/.zshrc
 
 #conky
 mkdir $HOME/.conky && cp ../conky/* $HOME/.conky
+
+#i3
+mv $HOME/.i3/config $HOME/.i3/config_orig
+cp ../i3/config $HOME/.i3/
