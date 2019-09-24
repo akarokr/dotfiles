@@ -6,3 +6,5 @@ for i in ${tools[@]}; do
   archInstall ${i}
 done
 
+source ~/.zshrc
+source ./utils.bash
