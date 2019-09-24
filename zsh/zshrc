@@ -1,0 +1,47 @@
+########## zsh and oh-my-zsh section ##########
+
+export ZSH=$HOME/.oh-my-zsh
+
+ZSH_THEME="minimal2"
+
+HIST_STAMPS="mm/dd/yyyy"
+
+plugins=(git docker docker-compose)
+
+source $ZSH/oh-my-zsh.sh
+
+fpath=($HOME/.zsh/completion $fpath)
+
+autoload -Uz compinit && compinit -i
+
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='vim'
+fi
+if [[ $TILIX_ID ]]; then
+  source /etc/profile.d/vte.sh
+fi
+
+TRAPWINCH() {
+ zle && { zle reset-prompt; zle -R }
+}
+
+########## Custom settings section ########## 
+
+# Export section
+export WORKON_HOME=$HOME/.virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+
+# Source section
+source /home/luiz/.local/bin/virtualenvwrapper.sh
+
+# Alias section
+alias ll='ls -lhtr'
+alias zshconfig="vim ~/.zshrc"
+alias zshsource="source ~/.zshrc"
+alias docker-kill-containers='docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)'
+alias docker-rm-images='docker rmi $(docker images -q) --force'
+
+
+

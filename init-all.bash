@@ -9,5 +9,6 @@ archInstall() {
   yay -Sy --needed --noconfirm
 }
 
-source ./arch/util.bash
+source ./arch/tools.bash
+source ./arch/utils.bash
 source ~/.zshrc
