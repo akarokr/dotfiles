@@ -9,10 +9,6 @@ git clone https://github.com/girishrau/oh-my-zsh-customizations.git /tmp/minimal
 #virtualenvwrapper
 /usr/bin/pip3 install --user virtualenvwrapper
 
-#zshrc
-# mv $HOME/.zshrc $HOME/.zshrc_orig && \
-cp $HOME/dotfiles/zsh/zshrc $HOME/.zshrc
-
 #conky
 mkdir $HOME/.conky && \
 	cp $HOME/dotfiles/conky/* $HOME/.conky
@@ -29,3 +25,7 @@ if ! [ -d $HOME/.oh-my-zsh ]; then
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" "" --unattended
   cp /tmp/minimal-theme/themes/* $HOME/.oh-my-zsh/themes
 fi
+
+#zshrc
+mv $HOME/.zshrc $HOME/.zshrc_orig && \
+cp $HOME/dotfiles/zsh/zshrc $HOME/.zshrc
