@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 #zsh as default
 chsh -s $(which zsh)
@@ -10,8 +10,8 @@ git clone https://github.com/girishrau/oh-my-zsh-customizations.git /tmp/minimal
 /usr/bin/pip3 install --user virtualenvwrapper
 
 #zshrc
-mv $HOME/.zshrc $HOME/.zshrc_orig && \
-	cp $HOME/dotfiles/zsh/zshrc $HOME/.zshrc
+# mv $HOME/.zshrc $HOME/.zshrc_orig && \
+cp $HOME/dotfiles/zsh/zshrc $HOME/.zshrc
 
 #conky
 mkdir $HOME/.conky && \
