@@ -10,18 +10,19 @@ git clone https://github.com/girishrau/oh-my-zsh-customizations.git /tmp/minimal
 /usr/bin/pip3 install --user virtualenvwrapper
 
 #zshrc
-mv $HOME/.zshrc $HOME/.zshrc_orig
-cp ../zsh/zshrc $HOME/.zshrc
+mv $HOME/.zshrc $HOME/.zshrc_orig && \
+	cp $HOME/dotfiles/zsh/zshrc $HOME/.zshrc
 
 #conky
-mkdir $HOME/.conky && cp ../conky/* $HOME/.conky
+mkdir $HOME/.conky && \
+	cp $HOME/dotfiles/conky/* $HOME/.conky
 
 #i3
-mv $HOME/.i3/config $HOME/.i3/config_orig
-cp ../i3/config $HOME/.i3/
+mv $HOME/.i3/config $HOME/.i3/config_orig && \
+	cp $HOME/dotfiles/i3/config $HOME/.i3/
 
 #screen setup
-cp $HOME/dotfiles/screen_startup.bash $HOME
+cp $HOME/dotfiles/arch/screen_startup.bash $HOME
 
 #oh my zsh
 if ! [ -d $HOME/.oh-my-zsh ]; then
