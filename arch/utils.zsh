@@ -17,6 +17,9 @@ mkdir $HOME/.conky && \
 mv $HOME/.i3/config $HOME/.i3/config_orig && \
 	cp $HOME/dotfiles/i3/config $HOME/.i3/
 
+#vimrc
+mv $HOME/dotfiles/vim/vimrc $HOME/.vimrc
+
 #screen setup
 cp $HOME/dotfiles/arch/screen_startup.bash $HOME
 

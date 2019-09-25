@@ -1,9 +1,9 @@
 #!/bin/bash
 
-tools=(zsh curl xclip spotify google-chrome zip unzip docker)
+tools=(zsh curl xclip spotify google-chrome zip unzip docker megasync feh)
 
 for i in ${tools[@]}; do
-  yay -Syyu --needed --noconfirm ${i}
+  yay -Syu --needed --noconfirm ${i}
 done
 
 # source $HOME/dotfiles/arch/utils.bash
