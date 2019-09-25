@@ -6,5 +6,4 @@ for i in ${tools[@]}; do
   yay -Syyu --needed --noconfirm ${i}
 done
 
-source utils.bash
-source ~/.zshrc
+source $HOME/dotfiles/utils.bash
