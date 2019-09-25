@@ -6,5 +6,5 @@ sudo pacman-mirrors --country Brazil
 sudo pacman -Syy
 
 source $HOME/dotfiles/arch/tools.bash
-source $HOME/dotfiles/arch/utils.bash
+source $HOME/dotfiles/arch/utils.zsh
 source ~/.zshrc
