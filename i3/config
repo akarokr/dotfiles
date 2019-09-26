@@ -27,7 +27,7 @@ font xft:URWGothic-Book 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec terminal -e /usr/bin/zsh
+bindsym $mod+Return exec urxvt -e /usr/bin/zsh
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -73,10 +73,10 @@ bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 focus_follows_mouse no
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+#bindsym $mod+j focus left
+#bindsym $mod+k focus down
+#bindsym $mod+l focus up
+#bindsym $mod+semicolon focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -138,10 +138,10 @@ bindsym $mod+Ctrl+Right workspace next
 bindsym $mod+Ctrl+Left workspace prev
 
 set $ws1 "1:1: term    "
-set $ws2 "2:2: chrome "
-set $ws3 "3:3: Spotify  "
-#set $ws4 "4:4: Spotify "
-#set $ws5 "5:5:  "
+set $ws2 "2:2: web "
+set $ws3 "3:3: editor "
+set $ws4 "4:4: music "
+set $ws5 "5:5: file manager "
 #set $ws6 "6:6:  "
 
 # Workspace names
@@ -152,7 +152,7 @@ set $ws3 "3:3: Spotify  "
 #set $ws2 2
 #set $ws3 3
 #set $ws4 4
-set $ws5 5
+#set $ws5 5
 set $ws6 6
 set $ws7 7
 set $ws8 8
@@ -188,15 +188,19 @@ bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 
 # Open applications on specific workspaces
-assign [class="Urxvt"] $ws1
+assign [class="(?i)URxvt"] $ws1
 assign [class="(?i)chrome"] $ws2
-# assign [class="Pcmanfm"] $ws3
-# assign [class="Skype"] $ws5
+assign [class="(?i)subl3"] $ws3
+assign [class="(?i)Spotify"] $ws4
+assign [class="(?i)pcmanfm"] $ws5
 
 
 # Open specific applications in floating mode
+for_window [class="Spotify"] move to workspace $ws4
 for_window [title="alsamixer"] floating enable border pixel 1
-for_window [class='Urxvt'] floating enable border pixel 1
+for_window [class="URxvt"] floating enable border pixel 1 geometry {"x": 27, "y": 101, "width": 870, "height": 501}
+for_window [class="pcmanfm"] floating enable border pixel 1 resize set 870 720 move position 289 68
+#for_window [class="URxvt"] move to workspace $ws1
 for_window [class="calamares"] floating enable border normal
 for_window [class="Clipgrab"] floating enable
 for_window [title="File Transfer*"] floating enable
@@ -278,7 +282,7 @@ mode "resize" {
 }
 
 # Lock screen
-bindsym $mod+9 exec --no-startup-id blurlock
+bindsym $mod+l exec --no-startup-id blurlock
 
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
@@ -293,13 +297,16 @@ exec --no-startup-id clipit
 exec --no-startup-id $HOME/.conky/start_conky_maia
 #exec --no-startup-id conky $HOME/.conky/conky_maya
 #exec --no-startup-id conky $HOME/.conky/conky1.10_shortcuts_maia
-#exec --no-startup-id start_conky_green
+# exec --no-startup-id start_conky_green
 exec --no-startup-id xautolock -time 10 -locker blurlock
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 exec --no-startup-id google-chrome-stable
+exec --no-startup-id subl3
+exec --no-startup-id spotify
+exec --no-startup-id pcmanfm
 exec --no-startup-id urxvt -e /usr/bin/zsh 
-#exec --no-startup-id spotify
+exec --no-startup-id urxvt -e /usr/bin/zsh 
 exec_always bash $HOME/screen_startup.bash 
 
 # Color palette used for the terminal ( ~/.Xresources file )
@@ -333,33 +340,39 @@ set_from_resource $term_color13    color13
 set_from_resource $term_color14    color14
 set_from_resource $term_color15    color15
 
+#i3-msg "workspace 1; append_layout $HOME/.i3/ws1.json"
+
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 bar {
-    i3bar_command i3bar
-    status_command i3status
-    position top
+	i3bar_command i3bar
+	status_command i3status
+	#position bottom
+	position top
 
 ## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
-#   tray_output primary
-#   tray_output eDP1
+#	tray_output primary
+#	tray_output eDP1
 
-    bindsym button4 nop
-    bindsym button5 nop
+	bindsym button4 nop
+	bindsym button5 nop
 #   font xft:URWGothic-Book 11
-    strip_workspace_numbers yes
+	strip_workspace_numbers yes
 
     colors {
         background #222D31
         statusline #CCCCCC
         separator  #454947
 
-        #                  border  backgr  text
+        #                  border  backgr. text
         focused_workspace  #222D31 #555555 #F9FAF9
         active_workspace   #222D31 #353836 #FDF6E3
         inactive_workspace #222D31 #222D31 #887777
         binding_mode       #222D31 #2C2C2C #F9FAF9
         urgent_workspace   #222D31 #222D31 #E5201D
 
+                               
+
+        	
     }
 }
 
