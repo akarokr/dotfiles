@@ -65,7 +65,8 @@ URxvt.font:                       9x15,xft:TerminessTTFNerdFontMono
 !! terminus names see end of file!
 
 URxvt.depth:                      32
-URxvt.background:                 [90]#222D31
+!URxvt*background: 		  rgba:0000/0000/0200/c800
+URxvt.background:                [90]#222D31
 URxvt*scrollBar:                  false
 URxvt*mouseWheelScrollPage:       false
 URxvt*cursorBlink:                true
