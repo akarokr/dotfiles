@@ -10,12 +10,12 @@ git clone https://github.com/girishrau/oh-my-zsh-customizations.git /tmp/minimal
 /usr/bin/pip3 install --user virtualenvwrapper
 
 #conky
-mkdir $HOME/.conky && \
-	cp $HOME/dotfiles/conky/* $HOME/.conky
+mkdir $HOME/.conky 
+cp $HOME/dotfiles/conky/* $HOME/.conky
 
 #i3
-mv $HOME/.i3/config $HOME/.i3/config_orig && \
-	cp $HOME/dotfiles/i3/config $HOME/.i3/
+mv $HOME/.i3/config $HOME/.i3/config_orig 
+cp $HOME/dotfiles/i3/config $HOME/.i3/
 
 #vimrc
 mv $HOME/dotfiles/vim/vimrc $HOME/.vimrc
@@ -30,5 +30,9 @@ if ! [ -d $HOME/.oh-my-zsh ]; then
 fi
 
 #zshrc
-mv $HOME/.zshrc $HOME/.zshrc_orig && \
+mv $HOME/.zshrc $HOME/.zshrc_orig
 cp $HOME/dotfiles/zsh/zshrc $HOME/.zshrc
+
+#Xresourses
+mv $HOME/.Xresources .Xresources_orig 
+cp $HOME/dotfiles/x/.Xresources .Xresources
