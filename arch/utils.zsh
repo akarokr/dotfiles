@@ -17,6 +17,10 @@ cp $HOME/dotfiles/conky/* $HOME/.conky
 mv $HOME/.i3/config $HOME/.i3/config_orig 
 cp $HOME/dotfiles/i3/config $HOME/.i3/
 
+#install vim pathogen
+mkdir -p $HOME/.vim/autoload $HOME/.vim/bundle && \
+curl -LSso $HOME/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+
 #vimrc
 mv $HOME/dotfiles/vim/vimrc $HOME/.vimrc
 
@@ -36,3 +40,4 @@ cp $HOME/dotfiles/zsh/zshrc $HOME/.zshrc
 #Xresourses
 mv $HOME/.Xresources .Xresources_orig 
 cp $HOME/dotfiles/x/.Xresources .Xresources
+

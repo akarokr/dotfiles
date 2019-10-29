@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 tools=(zsh curl xclip spotify google-chrome zip unzip docker megasync net-tools)
 

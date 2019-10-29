@@ -35,11 +35,12 @@ export WORKON_HOME=$HOME/.virtualenvs
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 
 # Source section
-source /home/luiz/.local/bin/virtualenvwrapper.sh
+source $HOME/.local/bin/virtualenvwrapper.sh
 
 # Alias section
 alias ll='ls -lhtr'
-alias zshconfig="vim ~/.zshrc"
-alias zshsource="source ~/.zshrc"
+alias zshconfig="vim $HOME/.zshrc"
+alias zshsource="source $HOME/.zshrc"
 alias docker-kill-containers='docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)'
 alias docker-rm-images='docker rmi $(docker images -q) --force'
+

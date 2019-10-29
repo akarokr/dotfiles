@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 gtf 1920 1050 60
 
