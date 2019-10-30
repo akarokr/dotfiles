@@ -11,7 +11,7 @@ git clone https://github.com/girishrau/oh-my-zsh-customizations.git /tmp/minimal
 
 #conky
 mkdir $HOME/.conky 
-cp $HOME/dotfiles/conky/* $HOME/.conky
+cp $HOME/dotfiles/conky/* $HOME/.conky/
 
 #i3
 mv $HOME/.i3/config $HOME/.i3/config_orig 
@@ -22,7 +22,7 @@ mkdir -p $HOME/.vim/autoload $HOME/.vim/bundle && \
 curl -LSso $HOME/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
 #vimrc
-mv $HOME/dotfiles/vim/vimrc $HOME/.vimrc
+cp $HOME/dotfiles/vim/vimrc $HOME/.vimrc
 
 #screen setup
 cp $HOME/dotfiles/arch/screen_startup.bash $HOME
@@ -39,5 +39,5 @@ cp $HOME/dotfiles/zsh/zshrc $HOME/.zshrc
 
 #Xresourses
 mv $HOME/.Xresources .Xresources_orig 
-cp $HOME/dotfiles/x/.Xresources .Xresources
+cp $HOME/dotfiles/x/Xresources .Xresources
 
